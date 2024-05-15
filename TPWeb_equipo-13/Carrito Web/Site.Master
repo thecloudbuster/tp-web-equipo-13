@@ -42,7 +42,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container">
 
-                <a class="Trece" href="#">
+                <a class="Trece" href="/Default.aspx">
                     <img src="https://img.icons8.com/arcade/64/000000/t.png" alt="t" width="60" height="48" />
                 </a>
 
@@ -60,10 +60,11 @@
                     </form>
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    
                     </ul>
 
 
-                    <a class="Carrito" href="#">
+                    <a class="Carrito" href="/Carrito.aspx">
                         <img src="https://img.icons8.com/arcade/64/shopping-cart-loaded.png" alt="shopping-cart-loaded" width="60" height="48" />
                     </a>
                 </div>
@@ -73,13 +74,14 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
         <hr />
-        <footer>
-            <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
-        </footer>
         </div>
     </form>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder>
+    <div class="Container">
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        </asp:PlaceHolder>
+
+    </div>
+
 </body>
 </html>
