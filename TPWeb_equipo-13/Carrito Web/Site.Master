@@ -61,9 +61,11 @@
             </div>
         </nav>
         <!-- Fin barra de navegación -->
+        <div class="container">
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
         <hr />
+                    </div>
         <div class="Container">
             <asp:PlaceHolder runat="server">
                 <%: Scripts.Render("~/Scripts/bootstrap.js") %>
