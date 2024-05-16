@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 using dominio;
 using conexion;
-using static System.Net.Mime.MediaTypeNames;
-using System.Text.RegularExpressions;
+using System.Data.SqlTypes;
 
 namespace gestor
 {
@@ -19,7 +19,7 @@ namespace gestor
 
             try
             {
-                datos.setearConsulta("SELECT A.Id, Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion Marca, C.Descripcion Categoria" +
+                datos.setearConsulta("SELECT A.Id, Codigo, A.Nombre, A.Descripcion, A.Precio, A.IdCategoria, A.IdMarca, M.Descripcion Marca, C.Id IdCategoria, C.Descripcion Categoria " +
                    "FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
@@ -33,17 +33,30 @@ namespace gestor
                         aux.Descripcion = (string)datos.Lector["Descripcion"];
                     if (!(datos.Lector["Precio"] is DBNull))
                         aux.Precio = (decimal)datos.Lector["Precio"];
-                    if (!(datos.Lector["Marca"] is DBNull))
-                        aux.Marca = (string)datos.Lector["Marca"];
-                    else
+
+                    aux.Categoria = new Categoria();
+
+                    if (!(datos.Lector["IdCategoria"] is DBNull))
                     {
-                        aux.Marca = "Sin Marca";
+                        aux.Categoria.IdCategoria = (int)datos.Lector["IdCategoria"];
                     }
                     if (!(datos.Lector["Categoria"] is DBNull))
-                        aux.Categoria = (string)datos.Lector["Categoria"];
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     else
                     {
-                        aux.Categoria = "Sin Categoria";
+                        aux.Categoria.Descripcion = "Sin Categoria";
+                    }
+
+                    aux.Marca = new Marca();
+                    if (!(datos.Lector["IdMarca"] is DBNull))
+                    {
+                        aux.Marca.IdMarca = (int)datos.Lector["IdMarca"];
+                    }
+                    if (!(datos.Lector["Marca"] is DBNull))
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    else
+                    {
+                        aux.Marca.Descripcion = "Sin Marca";
                     }
 
                     lista.Add(aux);
@@ -77,7 +90,7 @@ namespace gestor
 
         }
 
-        /*public void agregar(Articulo art)
+        public void agregar(Articulo art)
         {
             try
             {
@@ -162,12 +175,11 @@ namespace gestor
 
             }
 
-        }*/
+        }
 
 
-        //REVISAR FILTROS//
 
-       /* public List<Articulo> filtrar(string campo, string criterio, string filtro)
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
         {
             Conexion datos = new Conexion();
             List<Articulo> lista = new List<Articulo>();
@@ -235,7 +247,7 @@ namespace gestor
                             break;
                     }
                 }
-                datos.setearConsulta(consulta);
+                datos.setearConsulta( consulta );
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -244,11 +256,14 @@ namespace gestor
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Marca = new Marca();
                     if (!(datos.Lector["Marca"] is DBNull))
-                        aux.Marca = (string)datos.Lector["Marca"];
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Categoria = new Categoria();
                     if (!(datos.Lector["Categoria"] is DBNull))
-                        aux.Categoria = (string)datos.Lector["Categoria"];
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Imagen = new Imagen();
                     if (!(datos.Lector["Url"] is DBNull))
                         aux.Imagen.UrlLink = (string)datos.Lector["Url"];
 
@@ -262,7 +277,8 @@ namespace gestor
 
                 throw;
             }
-        }*/
+
+
+        }
     }
 }
-

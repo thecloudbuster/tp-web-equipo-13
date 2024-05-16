@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39779BE0-1883-4665-9B42-8A5DF87FAC52}</ProjectGuid>
+    <ProjectGuid>{556A3F80-3CA3-457D-8AA8-58056D9FB38E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>gestor</RootNamespace>
@@ -42,15 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gestionArticulo.cs" />
+    <Compile Include="gestionCategoria.cs" />
+    <Compile Include="gestionMarca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\conexion\conexion.csproj">
-      <Project>{d9caab5f-9312-4102-9ccc-bc3f86f9e71b}</Project>
+      <Project>{575cfe48-c13c-4cd4-a5f6-49f7d8b1f551}</Project>
       <Name>conexion</Name>
     </ProjectReference>
     <ProjectReference Include="..\dominio\dominio.csproj">
-      <Project>{952bf91a-6254-4627-92a8-6265708f2268}</Project>
+      <Project>{2bff6109-d62a-483f-b9ad-0cb8e493e123}</Project>
       <Name>dominio</Name>
     </ProjectReference>
   </ItemGroup>

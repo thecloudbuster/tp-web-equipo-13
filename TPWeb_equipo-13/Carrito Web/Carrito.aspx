@@ -3,5 +3,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
         <h2>pagina del carrito</h2>
+        <asp:GridView Id="dgvArticulos" runat="server" CssClass="table"></asp:GridView>
     </main>
 </asp:Content>

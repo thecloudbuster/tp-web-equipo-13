@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 
 namespace conexion
 {
@@ -20,9 +20,9 @@ namespace conexion
 
         public Conexion()
         {
-            conexion = new SqlConnection("server=192.168.1.2,1433\\sql-server-express; database=CATALOGO_P3_DB; integrated security = false; user=SA; password=Cor12345!; "); //Franco
+            //conexion = new SqlConnection("server=192.168.1.2,1433\\sql-server-express; database=CATALOGO_P3_DB; integrated security = false; user=SA; password=Cor12345!; "); //Franco
             //conexion = new SqlConnection("server=CristianEsc\\SQLEXPRESS01; database=CATALOGO_P3_DB; Trusted_Connection=true; "); //Cristian
-            //conexion = new SqlConnection("data source = .\\SQLEXPRESS; database= CATALOGO_P3_DB;integrated security = sspi;"); // Nahuel
+            conexion = new SqlConnection("data source = .\\SQLEXPRESS; database= CATALOGO_P3_DB;integrated security = sspi;"); // Nahuel
             comando = new SqlCommand();
         }
 
@@ -68,17 +68,17 @@ namespace conexion
             comando.Parameters.AddWithValue(nombre, valor);
         }
 
-        /* public int ultimoId()
-         {
-             setearConsulta("SELECT Id FROM ARTICULOS WHERE Id = (SELECT IDENT_CURRENT('ARTICULOS'))");
-             ejecutarLectura();
-             int id = 0;
-             if (lector.Read())
-             {
-                 id = (int)lector["Id"];
-             }
-             return id;
-         }*/
+        public int ultimoId()
+        {
+            setearConsulta("SELECT Id FROM ARTICULOS WHERE Id = (SELECT IDENT_CURRENT('ARTICULOS'))");
+            ejecutarLectura();
+            int id = 0;
+            if (lector.Read())
+            {
+                id = (int)lector["Id"];
+            }
+            return id;
+        }
 
         public void cerrarConexion()
         {
@@ -90,4 +90,3 @@ namespace conexion
 
     }
 }
-

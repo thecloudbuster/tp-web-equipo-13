@@ -121,6 +121,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="DetalleArticulo.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -202,6 +203,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DetalleArticulo.aspx.cs">
+      <DependentUpon>DetalleArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleArticulo.aspx.designer.cs">
+      <DependentUpon>DetalleArticulo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -250,6 +258,10 @@
     <ProjectReference Include="..\dominio\dominio.csproj">
       <Project>{952bf91a-6254-4627-92a8-6265708f2268}</Project>
       <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gestor\gestor.csproj">
+      <Project>{556a3f80-3ca3-457d-8aa8-58056d9fb38e}</Project>
+      <Name>gestor</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

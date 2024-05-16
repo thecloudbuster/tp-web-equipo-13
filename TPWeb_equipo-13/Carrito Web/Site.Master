@@ -45,25 +45,15 @@
                 <a class="Trece" href="/Default.aspx">
                     <img src="https://img.icons8.com/arcade/64/000000/t.png" alt="t" width="60" height="48" />
                 </a>
-
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <form class="d-flex ms-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Nombre del Articulo" aria-label="Search" style="width: 300px;">
-                        <button class="btn btn-outline-primary" type="submit">Buscar</button>
-                    </form>
-
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <asp:TextBox runat="server" ID="TxtbBuscar"  placeholder="Nombre del Articulo" CssClass="form-control me-2" style="width: 300px;"/>
                     
+                    <asp:Button Text="Buscar"  ID="btnAceptar" CssClass="btn btn-outline-primary" OnClick="btnAceptar_Click" runat="server" />
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     </ul>
-
-
                     <a class="Carrito" href="/Carrito.aspx">
                         <img src="https://img.icons8.com/arcade/64/shopping-cart-loaded.png" alt="shopping-cart-loaded" width="60" height="48" />
                     </a>
@@ -74,14 +64,14 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
         <hr />
+        <div class="Container">
+            <asp:PlaceHolder runat="server">
+                <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+            </asp:PlaceHolder>
+
         </div>
     </form>
-    <div class="Container">
-        <asp:PlaceHolder runat="server">
-            <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-        </asp:PlaceHolder>
 
-    </div>
 
 </body>
 </html>
