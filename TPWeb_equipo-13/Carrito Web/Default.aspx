@@ -31,13 +31,16 @@
                 <%
                     foreach (dominio.Articulo art in ListaArticulo)
                     {
-                %>
+                        string defaultImageUrl = "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
+                        string imagen = art.imagenes != null && art.imagenes.Count > 0 ? art.imagenes[0] : defaultImageUrl;%>
                         <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="<%= imagen %>" class="card-img-top" alt="..." onerror="this.onerror=null;this.src='<%= defaultImageUrl %>';"/>
                          <div class="card-body">
                             <h5 class="card-title"><%: art.Nombre %></h5>
                             <p class="card-text"><%: art.Precio %></p>
                             <a href="DetalleArticulo.aspx?id= <%: art.Id %>" class="btn btn-primary">Ver detalle</a>
+                            
+                             
                          </div>
                         </div>
                 <%

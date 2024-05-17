@@ -18,6 +18,11 @@ namespace Carrito_Web
         {
             // Tu lógica aquí
         }
+        protected void btnVerdetalle_Click(object sender, EventArgs e)
+        {
+            // Tu lógica aquí
+        }
+        
 
     }
 
