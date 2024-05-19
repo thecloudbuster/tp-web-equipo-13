@@ -15,10 +15,16 @@ namespace Carrito_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["id"] != null) {
-            int id = int.Parse(Request.QueryString["id"].ToString());
-            List<Articulo> temp = (List<Articulo>)Session["listaArticulo"];
-            Articulo art = temp.Find(x => x.Id == id);
+            if (Request.QueryString["id"] != null)
+            {
+                int id = int.Parse(Request.QueryString["id"].ToString());
+                List<Articulo> temp = (List<Articulo>)Session["listaArticulo"];
+                Articulo art = temp.Find(x => x.Id == id);
+                lblNombre.Text = art.Nombre;
+                lblDesc.Text = art.Descripcion;
+                lblMarca.Text = art.Marca.Descripcion;
+                lblCategoria.Text = art.Categoria.Descripcion;
+                lblPrecio.Text = art.Precio.ToString();
             }
         }
     }

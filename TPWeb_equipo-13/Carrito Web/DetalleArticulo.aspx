@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetalleArticulo.aspx.cs" Inherits="Carrito_Web.DetalleArticulo" %>
+﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetalleArticulo.aspx.cs" Inherits="Carrito_Web.DetalleArticulo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <html lang="en">
     <head>
@@ -22,12 +22,15 @@
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg" alt="..." /></div>
                     <div class="col-md-6">
                         
-                        <h1 class="display-5 fw-bolder">Nombre del articulo</h1>
+                        <asp:Label ID="lblNombre" cssclass="display-5 fw-bolder" runat="server"></asp:Label>
                         <div class="fs-5 mb-5">
                             
                             <span> </span>
                         </div> 
-                        <p class="lead">Descripcion</p>
+                        <asp:Label ID="lblDesc" cssclass="lead" runat="server"></asp:Label>
+                        <asp:Label ID="lblMarca" cssclass="lead" runat="server"></asp:Label>
+                        <asp:Label ID="lblCategoria" cssclass="lead" runat="server"></asp:Label>
+                        <asp:Label ID="lblPrecio" cssclass="lead" runat="server"></asp:Label>
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
