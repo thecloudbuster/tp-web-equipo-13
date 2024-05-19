@@ -30,5 +30,29 @@ namespace Carrito_Web
                 imgArt.ImageUrl = imagen;
             }
         }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Articulo art = new Articulo();
+            if (Request.QueryString["id"] != null)
+            {
+                int id = int.Parse(Request.QueryString["id"].ToString());
+                List<Articulo> temp = (List<Articulo>)Session["listaArticulo"];
+                art = temp.Find(x => x.Id == id);
+                List<Articulo> lista;
+                if (Session["listaCarrito"] != null)
+                {
+                    lista = (List<Articulo>)Session["listaCarrito"];
+                    lista.Add(art);
+                }
+                else
+                {
+                    lista = new List<Articulo>();
+                    lista.Add(art);
+                    Session.Add("listaCarrito", lista);
+                }
+            }
+            Response.Redirect("Default.aspx");
+        }
     }
 }
