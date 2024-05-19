@@ -29,7 +29,7 @@
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <%
-                    foreach (dominio.Articulo art in ListaArticulo)
+                    foreach (dominio.Articulo art in Session["listaArticulo"] as IEnumerable<dominio.Articulo>)
                     {
                         string defaultImageUrl = "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
                         string imagen = art.imagenes != null && art.imagenes.Count > 0 ? art.imagenes[0] : defaultImageUrl;%>

@@ -20,8 +20,8 @@ namespace conexion
 
         public Conexion()
         {
-            //conexion = new SqlConnection("server=192.168.1.2,1433\\sql-server-express; database=CATALOGO_P3_DB; integrated security = false; user=SA; password=Cor12345!; "); //Franco
-            conexion = new SqlConnection("server=CristianEsc\\SQLEXPRESS01; database=CATALOGO_P3_DB; Trusted_Connection=true; "); //Cristian
+            conexion = new SqlConnection("server=192.168.1.2,1433\\sql-server-express; database=CATALOGO_P3_DB; integrated security = false; user=SA; password=Cor12345!; "); //Franco
+            //conexion = new SqlConnection("server=CristianEsc\\SQLEXPRESS01; database=CATALOGO_P3_DB; Trusted_Connection=true; "); //Cristian
             //conexion = new SqlConnection("data source = .\\SQLEXPRESS; database= CATALOGO_P3_DB;integrated security = sspi;"); // Nahuel
             comando = new SqlCommand();
         }
