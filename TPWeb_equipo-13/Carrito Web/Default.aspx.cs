@@ -13,11 +13,18 @@ namespace Carrito_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["listaArticulo"] == null) { 
-            gestionArticulo gestionArt = new gestionArticulo();
-            Session.Add("listaArticulo", gestionArt.listar());
+            List<Articulo> lista;
+            if (Session["listaArticulo"] != null)
+            {
+                lista = (List<Articulo>)Session["listaArticulo"];
+            }
+            else
+            {
+                gestionArticulo gestionArt = new gestionArticulo();
+                lista = gestionArt.listar();
+                Session.Add("listaArticulo", lista);
             }
         }
     }
-    
+
 }

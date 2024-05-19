@@ -49,9 +49,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <asp:TextBox runat="server" ID="TxtbBuscar"  placeholder="Nombre del Articulo" CssClass="form-control me-2" style="width: 300px;"/>
-                    
-                    <asp:Button Text="Buscar"  ID="btnAceptar" CssClass="btn btn-outline-primary" OnClick="btnAceptar_Click" runat="server" />
+                    <asp:TextBox runat="server" ID="TxtbBuscar" placeholder="Nombre del Articulo" CssClass="form-control me-2" Style="width: 300px;" />
+
+                    <asp:Button Text="Buscar" ID="btnAceptar" CssClass="btn btn-outline-primary" OnClick="btnAceptar_Click" runat="server" />
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     </ul>
                     <a class="Carrito" href="/Carrito.aspx">
@@ -62,10 +62,10 @@
         </nav>
         <!-- Fin barra de navegación -->
         <div class="container">
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        </asp:ContentPlaceHolder>
-        <hr />
-                    </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+        </div>
         <div class="Container">
             <asp:PlaceHolder runat="server">
                 <%: Scripts.Render("~/Scripts/bootstrap.js") %>

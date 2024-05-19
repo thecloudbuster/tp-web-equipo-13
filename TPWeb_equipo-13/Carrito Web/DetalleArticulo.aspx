@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetalleArticulo.aspx.cs" Inherits="Carrito_Web.DetalleArticulo" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <html lang="en">
     <head>
@@ -12,25 +13,28 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />   
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Product section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg" alt="..." /></div>
                     <div class="col-md-6">
-                        
-                        <asp:Label ID="lblNombre" cssclass="display-5 fw-bolder" runat="server"></asp:Label>
+                        <asp:Image ID="imgArt" runat="server"/>
+                        <!--<img class="card-img-top mb-5 mb-md-0" id="imgArt" alt="..." /></div>-->
+                    <div class="col-md-6">
+
+                        <asp:Label ID="lblNombre" CssClass="display-5 fw-bolder" runat="server"></asp:Label>
                         <div class="fs-5 mb-5">
-                            
-                            <span> </span>
-                        </div> 
-                        <asp:Label ID="lblDesc" cssclass="lead" runat="server"></asp:Label>
-                        <asp:Label ID="lblMarca" cssclass="lead" runat="server"></asp:Label>
-                        <asp:Label ID="lblCategoria" cssclass="lead" runat="server"></asp:Label>
-                        <asp:Label ID="lblPrecio" cssclass="lead" runat="server"></asp:Label>
+
+                            <span></span>
+                            <asp:Label ID="lblDesc" CssClass="lead" runat="server"></asp:Label>
+                            <asp:Label ID="lblMarca" CssClass="lead" runat="server"></asp:Label>
+                            <asp:Label ID="lblCategoria" CssClass="lead" runat="server"></asp:Label>
+                            <asp:Label ID="lblPrecio" CssClass="lead" runat="server"></asp:Label>
+                        </div>
+
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
@@ -42,7 +46,7 @@
                 </div>
             </div>
         </section>
-        
+
         </section>
         
         <!-- Bootstrap core JS-->
@@ -50,5 +54,5 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
-</html>
+    </html>
 </asp:Content>
