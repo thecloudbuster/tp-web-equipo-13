@@ -11,7 +11,7 @@ namespace Carrito_Web
 {
 
 
-    public partial class About
+    public partial class Carrito
     {
 
         /// <summary>

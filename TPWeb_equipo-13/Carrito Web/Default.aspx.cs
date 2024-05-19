@@ -26,5 +26,4 @@ namespace Carrito_Web
             }
         }
     }
-
 }

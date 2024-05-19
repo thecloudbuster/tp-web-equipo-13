@@ -21,27 +21,27 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6">
-                        <asp:Image ID="imgArt" runat="server"/>
+                        <asp:Image ID="imgArt" runat="server" />
                         <!--<img class="card-img-top mb-5 mb-md-0" id="imgArt" alt="..." /></div>-->
-                    <div class="col-md-6">
+                        <div class="col-md-6">
 
-                        <asp:Label ID="lblNombre" CssClass="display-5 fw-bolder" runat="server"></asp:Label>
-                        <div class="fs-5 mb-5">
+                            <asp:Label ID="lblNombre" CssClass="display-5 fw-bolder" runat="server"></asp:Label>
+                            <div class="fs-5 mb-5">
 
-                            <span></span>
-                            <asp:Label ID="lblDesc" CssClass="lead" runat="server"></asp:Label>
-                            <asp:Label ID="lblMarca" CssClass="lead" runat="server"></asp:Label>
-                            <asp:Label ID="lblCategoria" CssClass="lead" runat="server"></asp:Label>
-                            <asp:Label ID="lblPrecio" CssClass="lead" runat="server"></asp:Label>
-                        </div>
+                                <span></span>
+                                <asp:Label ID="lblDesc" CssClass="lead" runat="server"></asp:Label>
+                                <asp:Label ID="lblMarca" CssClass="lead" runat="server"></asp:Label>
+                                <asp:Label ID="lblCategoria" CssClass="lead" runat="server"></asp:Label>
+                                <asp:Label ID="lblPrecio" CssClass="lead" runat="server"></asp:Label>
+                            </div>
 
-                        <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carrito" OnClick="btnAgregar_Click" cssclass="btn btn-outline-dark flex-shrink-0"/>
+                            <div class="d-flex">
+                                <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carrito" OnClick="btnAgregar_Click" CssClass="btn btn-outline-dark flex-shrink-0" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         </section>

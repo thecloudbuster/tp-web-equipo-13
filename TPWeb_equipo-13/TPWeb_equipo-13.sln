@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrito Web", "Carrito Web\Carrito Web.csproj", "{9FACF098-5864-4670-AB35-EB7228A6D8B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "Carrito Web\WebApp.csproj", "{9FACF098-5864-4670-AB35-EB7228A6D8B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "conexion", "conexion\conexion.csproj", "{D9CAAB5F-9312-4102-9CCC-BC3F86F9E71B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "conexion", "conexion\conexion.csproj", "{575CFE48-C13C-4CD4-A5F6-49F7D8B1F551}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{952BF91A-6254-4627-92A8-6265708F2268}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{2BFF6109-D62A-483F-B9AD-0CB8E493E123}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gestor", "gestor\gestor.csproj", "{39779BE0-1883-4665-9B42-8A5DF87FAC52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gestor", "gestor\gestor.csproj", "{556A3F80-3CA3-457D-8AA8-58056D9FB38E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{9FACF098-5864-4670-AB35-EB7228A6D8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FACF098-5864-4670-AB35-EB7228A6D8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FACF098-5864-4670-AB35-EB7228A6D8B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9CAAB5F-9312-4102-9CCC-BC3F86F9E71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9CAAB5F-9312-4102-9CCC-BC3F86F9E71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9CAAB5F-9312-4102-9CCC-BC3F86F9E71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9CAAB5F-9312-4102-9CCC-BC3F86F9E71B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{952BF91A-6254-4627-92A8-6265708F2268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{952BF91A-6254-4627-92A8-6265708F2268}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{952BF91A-6254-4627-92A8-6265708F2268}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{952BF91A-6254-4627-92A8-6265708F2268}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39779BE0-1883-4665-9B42-8A5DF87FAC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39779BE0-1883-4665-9B42-8A5DF87FAC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39779BE0-1883-4665-9B42-8A5DF87FAC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39779BE0-1883-4665-9B42-8A5DF87FAC52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{575CFE48-C13C-4CD4-A5F6-49F7D8B1F551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575CFE48-C13C-4CD4-A5F6-49F7D8B1F551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575CFE48-C13C-4CD4-A5F6-49F7D8B1F551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575CFE48-C13C-4CD4-A5F6-49F7D8B1F551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BFF6109-D62A-483F-B9AD-0CB8E493E123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BFF6109-D62A-483F-B9AD-0CB8E493E123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BFF6109-D62A-483F-B9AD-0CB8E493E123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BFF6109-D62A-483F-B9AD-0CB8E493E123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556A3F80-3CA3-457D-8AA8-58056D9FB38E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556A3F80-3CA3-457D-8AA8-58056D9FB38E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556A3F80-3CA3-457D-8AA8-58056D9FB38E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556A3F80-3CA3-457D-8AA8-58056D9FB38E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,7 +20,7 @@
         <header class="bg-info text-white">
             <div class="container px-4 px-lg-2 my-2">
                 <div class="text-center text-white">
-                    <h1 class="display-8 fw-bolder">Trece tu tienda... siempte</h1>
+                    <h1 class="display-8 fw-bolder">Cataldo Tienda</h1>
                 </div>
             </div>
         </header>
