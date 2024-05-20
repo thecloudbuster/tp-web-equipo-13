@@ -14,11 +14,16 @@ namespace Carrito_Web
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-
-        protected void txtBuscar_TextChanged(object sender, EventArgs e)
+   /*     protected void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            string busqueda = txtBuscar.Text;
-            Session.Add("busqueda", busqueda);
+            string filtro = txtBuscar.Text;
+            Session.Add("busqueda", filtro);
+        }*/
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = txtBuscar.Text;
+            Session.Add("busqueda", filtro);
+            Response.Redirect("Busqueda.aspx");
         }
     }
 }
