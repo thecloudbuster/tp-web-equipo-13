@@ -49,9 +49,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <asp:TextBox runat="server" ID="TxtbBuscar" placeholder="Nombre del Articulo" CssClass="form-control me-2" Style="width: 300px;" />
-
-                    <asp:Button Text="Buscar" ID="btnAceptar" CssClass="btn btn-outline-primary" OnClick="btnAceptar_Click" runat="server" />
+                    <asp:TextBox runat="server" ID="txtBuscar" placeholder="Nombre del Articulo" OnTextChanged="txtBuscar_TextChanged" CssClass="form-control me-2" Style="width: 300px;" />
+                    <a href="Busqueda.aspx" class="btn btn-outline-primary">Buscar</a>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     </ul>
                     <a class="Carrito" href="/Carrito.aspx">

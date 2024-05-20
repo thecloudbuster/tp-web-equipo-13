@@ -10,7 +10,8 @@
                         foreach (dominio.Articulo art in Session["listaCarrito"] as IEnumerable<dominio.Articulo>)
                         {
                             string defaultImageUrl = "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
-                            string imagen = art.imagenes != null && art.imagenes.Count > 0 ? art.imagenes[0] : defaultImageUrl;%>
+                            string imagen = art.imagenes != null && art.imagenes.Count > 0 ? art.imagenes[0] : defaultImageUrl;
+%>
                     <div class="card" style="width: 18rem;">
                         <img src="<%= imagen %>" class="card-img-top" alt="..." onerror="this.onerror=null;this.src='<%= defaultImageUrl %>';" />
                         <div class="card-body">
