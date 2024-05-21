@@ -22,7 +22,7 @@ namespace dominio
         public Categoria Categoria { get; set; }
         public decimal Precio { get; set; }
         public List<string> imagenes { get; set; }
-        
+
         public Imagen Imagen { get; set; }
 
     }

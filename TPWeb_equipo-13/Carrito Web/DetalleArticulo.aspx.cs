@@ -26,9 +26,17 @@ namespace Carrito_Web
                 lblMarca.Text = art.Marca.Descripcion;
                 lblCategoria.Text = art.Categoria.Descripcion;
                 lblPrecio.Text = art.Precio.ToString();
-                string defaultImageUrl = "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
-                string imagen = art.imagenes != null && art.imagenes.Count > 0 ? art.imagenes[0] : defaultImageUrl;
-                imgArt.ImageUrl = imagen;
+                if(art.imagenes != null)
+                {
+                    Session.Add("listaImagenes", art.imagenes);
+                }
+                else
+                {
+                    List<string> lista = new List<string>();
+                    string defaultImageUrl = "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
+                    lista.Add(defaultImageUrl);
+                    Session.Add("listaImagenes", defaultImageUrl);
+                }
             }
         }
 
