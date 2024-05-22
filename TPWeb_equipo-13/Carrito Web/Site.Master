@@ -7,18 +7,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Tienda Online</title>
+    <title><%: Page.Title %> - Cataldo Tienda</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </head>
+
 <body>
     <form runat="server">
+
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -38,41 +42,50 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <!-- Barra de navegación -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container">
-
-                <a class="Trece" href="/Default.aspx">
-                    <img src="https://img.icons8.com/arcade/64/000000/t.png" alt="t" width="60" height="48" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <asp:TextBox runat="server" ID="txtBuscar" placeholder="Nombre del Articulo" CssClass="form-control me-2" Style="width: 300px;" />
-                    <asp:Button ID="btnBuscar" OnClick="btnBuscar_Click" CssClass="btn btn-outline-primary" runat="server" Text="Buscar" />
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!--Barra de navegación -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/Default.aspx">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <asp:Repeater runat="server" ID="repDDL">
+                                    <ItemTemplate>
+                                        <li>
+                                            <a class="dropdown-item" href="Productos.aspx?id=<%#Eval("IdCategoria") %>"><%#Eval("Descripcion") %></a>
+                                        </li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </ul>
+                        </li>
                     </ul>
+                    <span class="navbar-brand mb-0 h1">CATALDO TIENDA ONLINE</span>
+
+                    <form class="d-flex" role="search">
+                        <asp:TextBox runat="server" ID="tbxBuscador" placeholder="Buscar..." CssClass="form-control me-2" Style="width: 300px;" ForeColor="White"/>
+                        <asp:ImageButton ID="btnBuscar" OnClick="btnBuscar_Click" CssClass="btn btn-outline-success" ImageUrl="https://images.vexels.com/media/users/3/195032/isolated/lists/5c8f453f712deaccf64d803b6578abd6-escuela-de-icono-plano-de-lupa.png" Width="60" Height="38" runat="server" />
+
+                    </form>
                     <a class="Carrito" href="/Carrito.aspx">
                         <img src="https://img.icons8.com/arcade/64/shopping-cart-loaded.png" alt="shopping-cart-loaded" width="60" height="48" />
                     </a>
-                </div>
-            </div>
+                    <span class="js-cart-widget-amount cart-widget-amount" font-color="white"> 1 </span>
         </nav>
         <!-- Fin barra de navegación -->
-        <div class="container">
+        <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-        </div>
-        <div class="Container">
-            <asp:PlaceHolder runat="server">
-                <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-            </asp:PlaceHolder>
-
+            <footer>
+                <p>&copy Cataldo Tienda - <%: DateTime.Now.Year %></p>
+            </footer>
         </div>
     </form>
-
-
 </body>
+
 </html>

@@ -1,43 +1,29 @@
-﻿<%@ Page Title="Detalle" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetalleArticulo.aspx.cs" Inherits="Carrito_Web.DetalleArticulo" %>
+﻿<%@ Page Title="COMPRAR" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetalleArticulo.aspx.cs" Inherits="Carrito_Web.DetalleArticulo" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Shop Item - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <main>
         <!-- Product section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6">
-                                                <div id="carouselExampleIndicators" class="carousel slide">
+                        <div id="carouselExampleIndicators" class="carousel slide">
                             <!--Imagen del carousel -->
                             <div class="carousel-inner">
-                        <%
-                            foreach (string img in Session["listaImagenes"] as IEnumerable<string>)
-                            {
-                        %>
+                                <%
+                                    foreach (string img in Session["listaImagenes"] as IEnumerable<string>)
+                                    {
+                                %>
 
                                 <div class="carousel-item active">
                                     <img src="<%= img %>" class="d-block w-100" alt="...">
                                 </div>
 
-                            <%
-                                }
-                            %>
-                                                                                            </div>
-                                                        <!--Botones del carousel -->
+                                <%
+                                    }
+                                %>
+                            </div>
+                            <!--Botones del carousel -->
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
@@ -69,11 +55,5 @@
             </div>
             </div>
         </section>
-
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-    </html>
+    </main>
 </asp:Content>

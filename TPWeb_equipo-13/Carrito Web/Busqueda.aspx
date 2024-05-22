@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Busqueda.aspx.cs" Inherits="Carrito_Web.Busqueda" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,15 +14,6 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
-
-        <!-- Header-->
-        <header class="bg-info text-white">
-            <div class="container px-4 px-lg-2 my-2">
-                <div class="text-center text-white">
-                    <h1 class="display-8 fw-bolder">Cataldo Tienda</h1>
-                </div>
-            </div>
-        </header>
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
@@ -49,10 +40,6 @@
                 </div>
             </div>
         </section>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
     </body>
     </html>
 </asp:Content>
