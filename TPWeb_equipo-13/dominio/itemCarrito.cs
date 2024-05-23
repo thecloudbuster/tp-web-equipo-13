@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace dominio
 {
-    public class Articulo
+    public class itemCarrito
     {
         public int Id { get; set; }
         public string Codigo { get; set; }
@@ -18,6 +16,6 @@ namespace dominio
         public Categoria Categoria { get; set; }
         public decimal Precio { get; set; }
         public List<string> imagenes { get; set; }
-
+        public int Cantidad { get; set; }   
     }
 }

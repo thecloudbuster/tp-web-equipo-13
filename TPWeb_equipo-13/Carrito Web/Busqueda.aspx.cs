@@ -1,5 +1,4 @@
 ﻿using dominio;
-using gestor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +11,19 @@ namespace Carrito_Web
 {
     public partial class Busqueda : System.Web.UI.Page
     {
-              protected void Page_Load(object sender, EventArgs e)
-               {
-                   string filtro;
-                   List<Articulo> listafiltrada = new List<Articulo>();
-                   List<Articulo> lista = (List<Articulo>)Session["listaArticulo"];
-                   if (Session["busqueda"] == null || (string)Session["busqueda"] == "")
-                   {
-                       Response.Redirect("Default.aspx");
-                   }
-                   else
-                   {
-                       filtro = (string)Session["busqueda"];
-                       listafiltrada = lista.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()) || x.Marca.ToString().ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.Categoria.ToString().ToLower().Contains(filtro.ToLower()));
-                       Session.Add("listaBusqueda", listafiltrada);
-                   }
-               }
-        /*protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["id"] != null)
+            if (Session["busqueda"] == null || (string)Session["busqueda"] == "")
             {
-                string filtro = Request.QueryString["id"];
-                List<Articulo> temp = (List<Articulo>)Session["listaArticulo"];
-                List<Articulo> listafiltrada = new List<Articulo>();
-                listafiltrada = temp.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()) || x.Marca.ToString().ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.Categoria.ToString().ToLower().Contains(filtro.ToLower()));
-                Session.Add("listaBusqueda", listafiltrada);
+                Response.Redirect("Default.aspx", false);
             }
             else
             {
-                Response.Redirect("Default.aspx");
+                List<Articulo> lista = (List<Articulo>)Session["listaArticulo"];
+                string filtro = (string)Session["busqueda"];
+                List<Articulo> listafiltrada = lista.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()) || x.Marca.ToString().ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.Categoria.ToString().ToLower().Contains(filtro.ToLower()));
+                Session.Add("listaBusqueda", listafiltrada);
             }
-        }*/
+        }
     }
 }

@@ -15,15 +15,6 @@ namespace Carrito_Web
     {
 
         /// <summary>
-        /// Control repDDL.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repDDL;
-
-        /// <summary>
         /// Control tbxBuscador.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,24 @@ namespace Carrito_Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btnBuscar;
+
+        /// <summary>
+        /// Control repCat.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repCat;
+
+        /// <summary>
+        /// Control repMarca.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repMarca;
 
         /// <summary>
         /// Control MainContent.

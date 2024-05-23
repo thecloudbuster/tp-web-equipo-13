@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using conexion;
 using dominio;
 using gestor;
+
 
 
 namespace Carrito_Web
@@ -26,7 +27,7 @@ namespace Carrito_Web
                 lblMarca.Text = art.Marca.Descripcion;
                 lblCategoria.Text = art.Categoria.Descripcion;
                 lblPrecio.Text = art.Precio.ToString();
-                if(art.imagenes != null)
+                if (art.imagenes != null)
                 {
                     Session.Add("listaImagenes", art.imagenes);
                 }
@@ -35,33 +36,26 @@ namespace Carrito_Web
                     List<string> lista = new List<string>();
                     string defaultImageUrl = "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
                     lista.Add(defaultImageUrl);
-                    Session.Add("listaImagenes", defaultImageUrl);
+                    Session.Add("listaImagenes", lista);
                 }
             }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Articulo art = new Articulo();
-            if (Request.QueryString["id"] != null)
+            int id = int.Parse(Request.QueryString["id"].ToString());
+            List<Articulo> temp = (List<Articulo>)Session["listaArticulo"];
+            Articulo art = temp.Find(x => x.Id == id);
+            gestionItem gestionIt = new gestionItem();
+            itemCarrito item = gestionIt.copiarArticulo(art, 1); //desarrollar el tema de la cantidad
+            List<itemCarrito> lista = new List<itemCarrito>();
+            if (Session["listaCarrito"] != null)
             {
-                int id = int.Parse(Request.QueryString["id"].ToString());
-                List<Articulo> temp = (List<Articulo>)Session["listaArticulo"];
-                art = temp.Find(x => x.Id == id);
-                List<Articulo> lista;
-                if (Session["listaCarrito"] != null)
-                {
-                    lista = (List<Articulo>)Session["listaCarrito"];
-                    lista.Add(art);
-                }
-                else
-                {
-                    lista = new List<Articulo>();
-                    lista.Add(art);
-                    Session.Add("listaCarrito", lista);
-                }
+                lista = (List<itemCarrito>)Session["listaCarrito"];
             }
-            Response.Redirect("Default.aspx");
+            lista.Add(item);
+            Session.Add("listaCarrito", lista);
+            Response.Redirect("Carrito.aspx", false);
         }
     }
 }

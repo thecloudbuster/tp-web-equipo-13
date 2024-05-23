@@ -16,8 +16,8 @@ namespace Carrito_Web
             if (Session["listaArticulo"] == null)
             {
                 gestionArticulo gestionArt = new gestionArticulo();
-                List<Articulo> lista = gestionArt.listar();
-                Session.Add("listaArticulo", lista);
+                List<Articulo> listaArt = gestionArt.listar();
+                Session.Add("listaArticulo", listaArt);
             }
 
             if (Session["listaCategoria"] == null)
@@ -26,21 +26,24 @@ namespace Carrito_Web
                 List<Categoria> listaCat = gestionCat.listar();
                 Session.Add("listaCategoria", listaCat);
             }
+            repCat.DataSource = Session["listaCategoria"];
+            repCat.DataBind();
 
-            repDDL.DataSource = Session["listaCategoria"];
-            repDDL.DataBind();
-
-            if(Session["listaCarrito"] != null) {
-            List<Articulo> listaCar = (List<Articulo>)Session["listaCarrito"];
-            int carrito = listaCar.Count();
-            Session.Add("itemCarrito", carrito);
+            if (Session["listaMarca"] == null)
+            {
+                gestionMarca gestionMarca = new gestionMarca();
+                List<Marca> listaMarca = gestionMarca.listar();
+                Session.Add("listaMarca", listaMarca);
             }
+            repMarca.DataSource = Session["listaMarca"];
+            repMarca.DataBind();
+
         }
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             string filtro = tbxBuscador.Text;
             Session.Add("busqueda", filtro);
-            Response.Redirect("Busqueda.aspx");
+            Response.Redirect("Busqueda.aspx", false);
         }
     }
 }

@@ -46,35 +46,43 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                    <asp:TextBox runat="server" ID="tbxBuscador" placeholder="Buscar..." CssClass="form-control me-2" Style="width: 300px;" ForeColor="White" />
+                    <asp:ImageButton ID="btnBuscar" OnClick="btnBuscar_Click" CssClass="btn btn-outline-success" ImageUrl="https://images.vexels.com/media/users/3/195032/isolated/lists/5c8f453f712deaccf64d803b6578abd6-escuela-de-icono-plano-de-lupa.png" Width="60" Height="38" runat="server" />
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/Default.aspx">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías
                             </a>
                             <ul class="dropdown-menu">
-                                <asp:Repeater runat="server" ID="repDDL">
+                                <asp:Repeater runat="server" ID="repCat">
                                     <ItemTemplate>
                                         <li>
-                                            <a class="dropdown-item" href="Productos.aspx?id=<%#Eval("IdCategoria") %>"><%#Eval("Descripcion") %></a>
+                                            <a class="dropdown-item" href="Categorias.aspx?id=<%#Eval("IdCategoria") %>"><%#Eval("Descripcion") %></a>
+                                        </li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marcas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <asp:Repeater runat="server" ID="repMarca">
+                                    <ItemTemplate>
+                                        <li>
+                                            <a class="dropdown-item" href="Marcas.aspx?id=<%#Eval("IdMarca") %>"><%#Eval("Descripcion") %></a>
                                         </li>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </ul>
                         </li>
                     </ul>
-                    <span class="navbar-brand mb-0 h1">CATALDO TIENDA ONLINE</span>
-
-                    <form class="d-flex" role="search">
-                        <asp:TextBox runat="server" ID="tbxBuscador" placeholder="Buscar..." CssClass="form-control me-2" Style="width: 300px;" ForeColor="White"/>
-                        <asp:ImageButton ID="btnBuscar" OnClick="btnBuscar_Click" CssClass="btn btn-outline-success" ImageUrl="https://images.vexels.com/media/users/3/195032/isolated/lists/5c8f453f712deaccf64d803b6578abd6-escuela-de-icono-plano-de-lupa.png" Width="60" Height="38" runat="server" />
-
-                    </form>
                     <a class="Carrito" href="/Carrito.aspx">
-                        <img src="https://img.icons8.com/arcade/64/shopping-cart-loaded.png" alt="shopping-cart-loaded" width="60" height="48" />
+                        <img src="https://previews.123rf.com/images/rastudio/rastudio1601/rastudio160104002/51366127-icono-de-l%C3%ADnea-de-carro-de-compras-para-web-m%C3%B3vil-e-infograf%C3%ADa-vector-el-icono-de-la-delgada-l%C3%ADnea.jpg" alt="shopping-cart-loaded" width="60" height="48" />
                     </a>
-                    <span class="js-cart-widget-amount cart-widget-amount" font-color="white"> 1 </span>
+                    <span class="js-cart-widget-amount cart-widget-amount" font-color="white">1 </span>
         </nav>
         <!-- Fin barra de navegación -->
         <div class="container body-content">
@@ -87,5 +95,4 @@
         </div>
     </form>
 </body>
-
 </html>

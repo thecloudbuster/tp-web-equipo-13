@@ -47,38 +47,6 @@ namespace conexion
 
         }
 
-        public void ejecutarAccion()
-        {
-            comando.Connection = conexion;
-            try
-            {
-                conexion.Open();
-                comando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public void setearParametro(string nombre, object valor)
-        {
-            comando.Parameters.AddWithValue(nombre, valor);
-        }
-
-        public int ultimoId()
-        {
-            setearConsulta("SELECT Id FROM ARTICULOS WHERE Id = (SELECT IDENT_CURRENT('ARTICULOS'))");
-            ejecutarLectura();
-            int id = 0;
-            if (lector.Read())
-            {
-                id = (int)lector["Id"];
-            }
-            return id;
-        }
-
         public void cerrarConexion()
         {
             if (lector != null)

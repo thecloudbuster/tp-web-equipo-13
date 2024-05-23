@@ -1,31 +1,33 @@
-﻿<%@ Page Title="CARRITO DE COMPRAS" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="Carrito_Web.Carrito" %>
+﻿<%@ Page Title="Carrito de compras" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="Carrito_Web.Carrito" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
-        <h2>pagina del carrito</h2>
-        <asp:GridView Id="dgvArticulos" runat="server" CssClass="table"></asp:GridView>
-                    <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <%
-                        foreach (dominio.Articulo art in Session["listaCarrito"] as IEnumerable<dominio.Articulo>)
-                        {
-                            string defaultImageUrl = "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
-                            string imagen = art.imagenes != null && art.imagenes.Count > 0 ? art.imagenes[0] : defaultImageUrl;
-%>
-                    <div class="card" style="width: 18rem;">
-                        <img src="<%= imagen %>" class="card-img-top" alt="..." onerror="this.onerror=null;this.src='<%= defaultImageUrl %>';" />
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <a href="DetalleArticulo.aspx?id= <%: art.Id %>"><%: art.Nombre %></a>
-                            </h5>
-                            <p class="card-text"><%: art.Precio %></p>
+        <h2>Carrito de compras</h2>
+        <asp:GridView ID="dgvArticulos" runat="server" CssClass="table"></asp:GridView>
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <%
+                    foreach (dominio.itemCarrito art in Session["listaCarrito"] as IEnumerable<dominio.itemCarrito>)
+                    {
+                        string defaultImageUrl = "https://www.shutterstock.com/image-vector/image-icon-600nw-211642900.jpg";
+                        string imagen = art.imagenes != null && art.imagenes.Count > 0 ? art.imagenes[0] : defaultImageUrl;
+                %>
+                <div class="card" style="width: 18rem;">
+                    <img src="<%= imagen %>" class="card-img-top" alt="..." onerror="this.onerror=null;this.src='<%= defaultImageUrl %>';" />
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="DetalleArticulo.aspx?id= <%: art.Id %>"><%: art.Nombre %></a>
+                        </h5>
+                        <p class="card-text"><%: art.Precio %></p>
 
-                        </div>
                     </div>
-                    <%
-                        }
-                    %>
                 </div>
+                <%
+                    }
+                %>
             </div>
+            <a class="btn btn-primary btn-lg" href="/Default.aspx" role="button">Seguir comprando</a>
+            <button class="btn btn-secondary btn-lg">Ir a pagar</button>
+        </div>
     </main>
 </asp:Content>
