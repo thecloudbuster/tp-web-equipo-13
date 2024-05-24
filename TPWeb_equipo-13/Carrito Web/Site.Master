@@ -9,15 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Cataldo Tienda</title>
 
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
-
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -28,7 +20,6 @@
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -43,46 +34,52 @@
         </asp:ScriptManager>
 
         <!--Barra de navegación -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-                    <asp:TextBox runat="server" ID="tbxBuscador" placeholder="Buscar..." CssClass="form-control me-2" Style="width: 300px;" ForeColor="White" />
-                    <asp:ImageButton ID="btnBuscar" OnClick="btnBuscar_Click" CssClass="btn btn-outline-success" ImageUrl="https://images.vexels.com/media/users/3/195032/isolated/lists/5c8f453f712deaccf64d803b6578abd6-escuela-de-icono-plano-de-lupa.png" Width="60" Height="38" runat="server" />
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/Default.aspx">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías
-                            </a>
-                            <ul class="dropdown-menu">
-                                <asp:Repeater runat="server" ID="repCat">
-                                    <ItemTemplate>
-                                        <li>
-                                            <a class="dropdown-item" href="Categorias.aspx?id=<%#Eval("IdCategoria") %>"><%#Eval("Descripcion") %></a>
-                                        </li>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marcas
-                            </a>
-                            <ul class="dropdown-menu">
-                                <asp:Repeater runat="server" ID="repMarca">
-                                    <ItemTemplate>
-                                        <li>
-                                            <a class="dropdown-item" href="Marcas.aspx?id=<%#Eval("IdMarca") %>"><%#Eval("Descripcion") %></a>
-                                        </li>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </ul>
-                        </li>
-                    </ul>
-                    <a class="Carrito" href="/Carrito.aspx">
-                        <img src="https://previews.123rf.com/images/rastudio/rastudio1601/rastudio160104002/51366127-icono-de-l%C3%ADnea-de-carro-de-compras-para-web-m%C3%B3vil-e-infograf%C3%ADa-vector-el-icono-de-la-delgada-l%C3%ADnea.jpg" alt="shopping-cart-loaded" width="60" height="48" />
-                    </a>
-                    <span class="js-cart-widget-amount cart-widget-amount" font-color="white">1 </span>
+                    <div class="col row justify-content-start ps-3">
+                        <asp:TextBox runat="server" ID="tbxBuscador" placeholder="Buscar..." CssClass="form-control me-2" Style="width: 300px;" ForeColor="White" />
+                        <asp:ImageButton ID="btnBuscar" OnClick="btnBuscar_Click" CssClass="btn btn-outline-success" ImageUrl="https://images.vexels.com/media/users/3/195032/isolated/lists/5c8f453f712deaccf64d803b6578abd6-escuela-de-icono-plano-de-lupa.png" Width="50" Height="38" runat="server" />
+                    </div>
+                    <div class="col">
+                        <ul class="navbar-nav justify-content-center p-2">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/Default.aspx">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <asp:Repeater runat="server" ID="repCat">
+                                        <ItemTemplate>
+                                            <li>
+                                                <a class="dropdown-item" href="Categorias.aspx?id=<%#Eval("IdCategoria") %>"><%#Eval("Descripcion") %></a>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marcas
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <asp:Repeater runat="server" ID="repMarca">
+                                        <ItemTemplate>
+                                            <li>
+                                                <a class="dropdown-item" href="Marcas.aspx?id=<%#Eval("IdMarca") %>"><%#Eval("Descripcion") %></a>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col text-end">
+                        <a class="active" href="/Carrito.aspx">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNvguY8eZeoNQ76MBGi38RPOaSqJm78j6gmBHD5wyRcg&s" alt="shopping-cart-loaded" width="60" height="38" />
+                        </a>
+                        <span class="fw-bold fs-4" style="color:red">1 </span>
+                    </div>
         </nav>
         <!-- Fin barra de navegación -->
         <div class="container body-content">
@@ -94,5 +91,8 @@
             </footer>
         </div>
     </form>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
