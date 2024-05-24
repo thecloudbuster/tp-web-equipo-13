@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -38,6 +39,18 @@ namespace Carrito_Web
             repMarca.DataSource = Session["listaMarca"];
             repMarca.DataBind();
 
+            if (Session["listaCarrito"]!= null)
+            {
+                List<itemCarrito> listaCarrito = (List<itemCarrito>)Session["listaCarrito"];
+                int i = listaCarrito.Count();
+                int cont = 0;
+                for (int x = 0; x < i; x++)
+                {
+                    itemCarrito it = listaCarrito[x];
+                    cont += it.Cantidad;
+                }
+                lblCarrito.Text = cont.ToString();
+            }
         }
         protected void btnBuscar_Click(object sender, EventArgs e)
         {

@@ -11,7 +11,8 @@ namespace Carrito_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+                repCarrito.DataSource = Session["listaCarrito"];
+                repCarrito.DataBind();
         }
     }
 }

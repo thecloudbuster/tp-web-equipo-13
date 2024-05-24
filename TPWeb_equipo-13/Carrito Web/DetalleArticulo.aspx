@@ -33,26 +33,17 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <!--Bloque con info y boton -->
-                        <div class="col-md-6">
-                            <asp:Label ID="lblNombre" CssClass="display-5 fw-bolder" runat="server"></asp:Label>
-                            <!--Info -->
-                            <div class="fs-5 mb-5">
-                                <span></span>
-                                <asp:Label ID="lblDesc" CssClass="lead" runat="server"></asp:Label>
-                                <asp:Label ID="lblMarca" CssClass="lead" runat="server"></asp:Label>
-                                <asp:Label ID="lblCategoria" CssClass="lead" runat="server"></asp:Label>
-                                <asp:Label ID="lblPrecio" CssClass="lead" runat="server"></asp:Label>
-                            </div>
-                            <!--Stock y boton de Agregar al Carrito -->
-                            <div class="d-flex">
-                                <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carrito" OnClick="btnAgregar_Click" CssClass="btn btn-outline-dark flex-shrink-0" />
-                            </div>
+
+                        <div class="card-body border-top text-center justify-content-center">
+                            <h5 class="card-title text-center justify-content-center">
+                                <asp:Label ID="lblNombre" CssClass="display-5 fw-bolder" runat="server"></asp:Label>
+                            </h5>
+                            <span></span>
+                            <asp:Label ID="lblDesc" CssClass="lead" runat="server"></asp:Label>
+                            <asp:Label ID="lblPrecio" CssClass="lead" runat="server"></asp:Label>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
     </main>

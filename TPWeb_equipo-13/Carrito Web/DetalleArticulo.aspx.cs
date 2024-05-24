@@ -24,8 +24,6 @@ namespace Carrito_Web
                 Articulo art = temp.Find(x => x.Id == id);
                 lblNombre.Text = art.Nombre;
                 lblDesc.Text = art.Descripcion;
-                lblMarca.Text = art.Marca.Descripcion;
-                lblCategoria.Text = art.Categoria.Descripcion;
                 lblPrecio.Text = art.Precio.ToString();
                 if (art.imagenes != null)
                 {
@@ -41,21 +39,5 @@ namespace Carrito_Web
             }
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(Request.QueryString["id"].ToString());
-            List<Articulo> temp = (List<Articulo>)Session["listaArticulo"];
-            Articulo art = temp.Find(x => x.Id == id);
-            gestionItem gestionIt = new gestionItem();
-            itemCarrito item = gestionIt.copiarArticulo(art, 1); //desarrollar el tema de la cantidad
-            List<itemCarrito> lista = new List<itemCarrito>();
-            if (Session["listaCarrito"] != null)
-            {
-                lista = (List<itemCarrito>)Session["listaCarrito"];
-            }
-            lista.Add(item);
-            Session.Add("listaCarrito", lista);
-            Response.Redirect("Carrito.aspx", false);
-        }
     }
 }

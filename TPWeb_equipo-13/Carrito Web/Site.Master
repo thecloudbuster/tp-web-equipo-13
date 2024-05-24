@@ -77,7 +77,7 @@
                         <a class="active" href="/Carrito.aspx">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNvguY8eZeoNQ76MBGi38RPOaSqJm78j6gmBHD5wyRcg&s" alt="shopping-cart-loaded" width="60" height="38" />
                         </a>
-                        <span class="fw-bold fs-4" style="color: red">1 </span>
+                        <asp:Label ID="lblCarrito" class="fw-bold fs-4" style="color: red" runat="server" Text=""></asp:Label>
                     </div>
         </nav>
         <!-- Fin barra de navegación -->

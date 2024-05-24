@@ -35,11 +35,17 @@ namespace Carrito_Web
             List<Articulo> temp = (List<Articulo>)Session["listaArticulo"];
             Articulo art = temp.Find(x => x.Id.ToString() == id);
             gestionItem gestionIt = new gestionItem();
-            itemCarrito item = gestionIt.copiarArticulo(art, 1); //desarrollar el tema de la cantidad
+            itemCarrito item = gestionIt.copiarArticulo(art, 1);
             List<itemCarrito> lista = new List<itemCarrito>();
             if (Session["listaCarrito"] != null)
             {
                 lista = (List<itemCarrito>)Session["listaCarrito"];
+                itemCarrito itemGuardado = lista.Find(x => x.Id.ToString() == id);
+                if (itemGuardado != null)
+                {
+                    item.Cantidad += itemGuardado.Cantidad;
+                    lista.Remove(itemGuardado);
+                }
             }
             lista.Add(item);
             Session.Add("listaCarrito", lista);
